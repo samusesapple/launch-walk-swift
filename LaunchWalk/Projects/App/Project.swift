@@ -10,7 +10,15 @@ let project = Project(
       bundleId: "com.lunchwalk.app",
       infoPlist: .default,
       sources: ["Sources/**"],
-      resources: ["Resources/**"]
+      resources: ["Resources/**"],
+      dependencies: [
+        .project(target: "Presentation", path: "../Presentation"),
+        .project(target: "Domain", path: "../Domain"),
+        .project(target: "Data", path: "../Data"),
+        .project(target: "Notification", path: "../Notification"),
+        .project(target: "Follow", path: "../Follow"),
+        .project(target: "WalkRecord", path: "../WalkRecord")
+      ]
     ),
     .target(
       name: "AppTests",
